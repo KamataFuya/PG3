@@ -10,7 +10,7 @@ struct LibraryCard {
 
 int main() {
 	LibraryCard lc;
-	lc.name = "カマタ フウヤ";
+	lc.name = "氏 名";
 	lc.checkoutDate = "20221101";
 	lc.returnDate = "20221108";
 	cout << lc.name << " 貸出日は " << lc.checkoutDate;
