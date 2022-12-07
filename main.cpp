@@ -13,15 +13,15 @@ void Create(CELL* list, int data);
 void Index(CELL* list);
 
 int main() {
-	int data; //入力された値を格納する変数
+	int data;
 	CELL firstCell; //先頭のセルの宣言
 	firstCell.next = nullptr; //VisualStudioではnextに何らかの値が入った状態で初期化されるので、nullptrを代入する
 
 	while (true) {
 		printf("好きな数字を入力してください\n");
-		printf("入力する値: ");
+		printf("入力する値 : ");
 		scanf_s("%d", &data);
-		printf("入力された値一覧 : ");
+		printf("\n入力された値一覧 : ");
 		//単方向リストの生成
 		Create(&firstCell, data);
 		//表示
@@ -56,5 +56,5 @@ void Index(CELL* list) {
 		list = list->next; //main関数で何も入っていないfirstCellを宣言しているので二個目から表示
 		printf("%d,", list->num); //表示
 	}
-	printf("]\n\n");
+	printf("]\n\n\n");
 }
