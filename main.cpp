@@ -1,19 +1,25 @@
-#include <iostream>
-#include <string>
-using namespace std;
-
-struct LibraryCard {
-	string name;
-	string checkoutDate;
-	string returnDate;
-};
+#include "SceneManager.h"
+#include <stdio.h>
 
 int main() {
-	LibraryCard lc;
-	lc.name = "カマタ フウヤ";
-	lc.checkoutDate = "20221101";
-	lc.returnDate = "20221108";
-	cout << lc.name << " 貸出日は " << lc.checkoutDate;
-	cout << " 返却日は " << lc.returnDate << " です";
+	SceneManager* sceneManager = nullptr;
+	sceneManager = SceneManager::GetInstance();
+	int input;
+	int sceneNum = 0;
+
+	while (true) {
+		//入力処理
+		printf("Press to 1 Change ==> ");
+		scanf_s("%d", &input);
+		//1を押すとシーンが進む
+		if (input == 1) {
+			sceneManager->ChangeScene(sceneNum);
+		}
+		//0を押すとループから抜ける(終了)
+		if (input == 0) {
+			break;
+		}
+	}
+
 	return 0;
 }
